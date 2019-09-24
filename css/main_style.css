@@ -6,18 +6,26 @@ Colorblind safe color palette from colorbrewer2.org.
 #b8e186 - light green
 #4dac26- green
 */
+/* In the body, all the text shifted from the left to the center of the
+webpage. The colors changed from white to the assigned colors (different
+shades of pink). "color" changed the text to the fuschia pink. */
 body {
   background-color: #f1b6da;
   color: #d01c8b;
   text-align: center;
   margin: 0;
 }
-
+/* For the section the heading changed to white. There was not much noticeable
+change here until I placed the body container. After the body container
+the heading became more noticeable. */
 h1 {
   color:#f7f7f7;
   padding: 5px;
   margin: 0;
 }
+/* The body container showed the most change in the webpage. The center became
+white, and the colors for the header and text stood out more that there was
+seperation. All the text is still in the center and still looks out of place.*/
 #body-container {
 background-color: #f7f7f7;
 max-width: 1000px;
@@ -27,19 +35,25 @@ height: 100vh;
   border-radius: 25px;
   overflow: hidden;
 }
-
+/* The header turned to a light pink;however, I couldnt tell that it did
+anything until after the body container.*/
 #header {
   background-color: #f1b6da;
 }
+/* The picture moved to the far left, but is still inside of the body conatiner.
+It is right on the margin at the very top of the page. */
 #profile-picture {
   float: left;
 }
-
+/* I did not see much happen here because the size seemed to have stayed the
+same as well as the postioning. */
 #Welcome-text {
   padding-top: 25px;
   font-size: 25px;
 }
-
+/* This code caused the research text section to be shifted to the left.
+This part seemed to have had the most change next to the body container.
+*/
 #research-interests {
 text-align: left;
 font-size: 25px;
