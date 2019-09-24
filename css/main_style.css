@@ -60,3 +60,10 @@ font-size: 25px;
 position: relative;
 left: 50px;
 }
+/* The code is for the copyright that is at the bottom of the page */
+#copyright {
+  position:absolute;
+  width:1000px;
+  text-align: center;
+  bottom: 20px;
+}

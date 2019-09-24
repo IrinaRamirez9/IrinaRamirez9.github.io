@@ -10,18 +10,18 @@
 <body>
   <div id="body-container">
     <div id="header">
-  <h1>Hello, welcome <script src="javascript/external.js"></script></h1>
-
+  <h1>Hello, welcome <script src="javascript/external.js"></script>!</h1>
 </div>
 <div id="profile-picture">
   <img src=images/profile-picture.jpg width=500px height=500px/>
 </div>
   <div id="welcome-text">
-    Welcome to my webpage.<br>
+
+    My name ir Irina Ramirez. <br>
+
     I am a student in the
    <a href="https://www.geo.txstate.edu/">Geography Department</a> at
    <a href="https://txstate.edu">Texas State University</a>.</d>
-
 
 
  </div>
@@ -33,6 +33,17 @@
      <li>History</li>
    </ol>
  </div>
+</div>
+
+<div id="copyright">
+<script>
+//The code above is giving an ID for the copyright.
+var today=new Date();
+//the variable will display the current date and time.
+var year =today.getFullYear();
+//This variable will display the year in four digits.
+document.writeln("Copyright&copy;"+year);
+</script>
 </div>
 </body>
 </html>
