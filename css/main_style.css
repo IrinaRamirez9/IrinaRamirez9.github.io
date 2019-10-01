@@ -60,6 +60,11 @@ font-size: 25px;
 position: relative;
 left: 50px;
 }
+#webmap-reviews {
+  text-align: left;
+  font-size: 25px;
+  position: relative;
+}
 /* The code is for the copyright that is at the bottom of the page */
 #copyright {
   position:absolute;
