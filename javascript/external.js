@@ -33,6 +33,19 @@
 //user_name=window.prompt("Please enter your name", "Type your name here");
 //document.writeln(user_name);
 //create a new variable to save the value of the user's user_name
+var webmaps =
+[
+  [ "OpenTopography Tools",
+    "https://www.opentopography.org/tools",
+    "Open Topography is a collection of data and tools that can be downloaded and used by the public. Some of the tools available is DEM Generation and Global Solar Irradiation. The data provided is high-resolution topography from all over the globe."
+  ],
+    ["Texas Ecosytems Analytical Mapper",
+    "https://tpwd.texas.gov/gos/team/",
+    "The Analytical Mapper is an interactive tool that guves the user a better understanding of Texas habitats. Some data that is provided is siol,hydrology, and ecoregion layers. There are more than 14,000 data samples collected open to the public. "
+  ]
+];
+
+
 function welcome()
 {
 let a = "Please enter your name.";
@@ -48,12 +61,12 @@ return message
 function webmap_table()
 {
   document.write("<table width=100%>");
-  for (var row=0; row < 2; row++)
+  for (var row=0; row < webmaps.length; row++)
   {
     document.write("<tr>");
-    for (var column=0; column < 3; column++)
+    for (var column=0; column < webmaps[0].length; column++)
   {
-    document.write("<td>" + row + "," + column + "</td>");
+    document.write("<td>" + webmaps[row][column] + "</td>");
   }
   document.write("</tr>");
 }
