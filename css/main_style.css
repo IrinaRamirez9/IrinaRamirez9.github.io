@@ -69,6 +69,7 @@ left: 50px;
 #copyright {
   position:absolute;
   width:1000px;
+  bottom: 20px
   text-align: center;
-  bottom: 20px;
+  ;
 }

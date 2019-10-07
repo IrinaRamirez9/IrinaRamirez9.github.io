@@ -41,7 +41,7 @@ var webmaps =
   ],
     ["Texas Ecosytems Analytical Mapper",
     "https://tpwd.texas.gov/gos/team/",
-    "The Analytical Mapper is an interactive tool that guves the user a better understanding of Texas habitats. Some data that is provided is siol,hydrology, and ecoregion layers. There are more than 14,000 data samples collected open to the public. "
+    "The Analytical Mapper is an interactive tool that guves the user a better understanding of Texas habitats. Some data that is provided is soil ,hydrology, and ecoregion layers. There are more than 14,000 data samples collected open to the public. "
   ]
 ];
 
@@ -76,7 +76,7 @@ function webmap_table()
     }
   }
   document.write("</tr>");
-  
+
 }
 document.write("</table>");
 }
