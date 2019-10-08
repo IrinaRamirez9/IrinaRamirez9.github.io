@@ -65,7 +65,7 @@ webmap_table();
 <h3>My First Webmap</h3>
 <div id="mapid" style="width: 600px; height: 400px; margin: auto;">
   <script>
-  var mymap = L.map('mapid').setView([51.505, -0.09] ,13);
+  var mymap = L.map('mapid');
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     maxZoom: 18,
     id: 'mapbox.mapbox-traffic-v1',
@@ -101,6 +101,22 @@ circle.on('click', function(e){
 polygon.on('click', function(e){
   mymap.setView(e.latlng,13);
 });
+
+var ZoomViewer = L.Control.extend({
+  onAdd: function(){
+    var gauge = L.DomUtil.create('div');
+    gauge.style.width = '200px';
+    gauge.style.background = 'rgba(255,255,255,0.5)';
+    gauge.style.textAlign = 'left';
+    mymap.on('zoomstart zoom zoomend', function(ev){
+      gauge.innerHTML = 'Zoom level: ' + mymap.getZoom();
+    })
+    return gauge;
+  }
+});
+(new ZoomViewer).addTo(mymap);
+
+mymap.setView([0,0],1);
 
   </script>
 </div>
