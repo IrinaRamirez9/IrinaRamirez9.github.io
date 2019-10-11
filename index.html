@@ -66,11 +66,14 @@ webmap_table();
 <div id="mapid" style="width: 600px; height: 400px; margin: auto;">
   <script>
   var mymap = L.map('mapid');
+/*MAPBOX TILE LAYER
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     maxZoom: 18,
     id: 'mapbox.mapbox-traffic-v1',
     accessToken: mapbox_access_token
   }).addTo(mymap);
+*/
+L.tileLayer('http://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',{}).addTo(mymap);
 
 var marker = L.marker([51.5, -0.09]).addTo(mymap);
 var circle = L.circle([51.508, -0.11], {
