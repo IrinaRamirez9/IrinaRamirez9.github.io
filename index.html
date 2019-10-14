@@ -2,9 +2,8 @@
 <html>
 <head>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/opencagedata/leafletopencagesearch@d4cbd36122efc8d17152b4177ed0e12165305441/dist/css/L.Control.OpenCag
-  eData.Search.min.css" />
-  <script src="https://cdn.jsdelivr.net/gh/opencagedata/leaflet-opencagesearch@d4cbd36122efc8d17152b4177ed0e12165305441/dist/js/L.Control.OpenCage
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/opencagedata/leaflet-opencage-search@d4cbd36122efc8d17152b4177ed0e12165305441/dist/css/L.Control.OpenCageData.Search.min.css" />
+  <script src="https://cdn.jsdelivr.net/gh/opencagedata/leaflet-opencage-search@d4cbd36122efc8d17152b4177ed0e12165305441/dist/js/L.Control.OpenCage
   Search.min.js"></script>
 
   <meta charset="utf-8" />
@@ -74,15 +73,17 @@ webmap_table();
 <h3>Geocoding Map</h3>
 <div id="mapid" style="width: 600px; height: 400px; margin: auto;">
 <script src="javascript/map.js"></script>
-var options = {
-  key: geocoder_api_key,
-  limit:10
-};
-  var control = L.Control.openCageSearch(options).addTo(mymap);
+</div>
+
+
   <script>
+
   var mymap = L.map('mapid');
-
-
+  var options = {
+    key: geocoder_api_key,
+    limit:10
+  };
+    var control = L.Control.openCageSearch(options).addTo(mymap);
 
 /*MAPBOX TILE LAYER
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -145,6 +146,8 @@ var ZoomViewer = L.Control.extend({
 (new ZoomViewer).addTo(mymap);
 
 mymap.setView([0,0],1);
+
+
 
   </script>
 </div>
