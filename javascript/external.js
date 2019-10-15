@@ -80,3 +80,13 @@ function webmap_table()
 }
 document.write("</table>");
 }
+
+function copyright()
+{
+  //The code above is giving an ID for the copyright.
+  var today=new Date();
+  //the variable will display the current date and time.
+  var year =today.getFullYear();
+  //This variable will display the year in four digits.
+  document.writeln("Copyright&copy;"+year);
+}
