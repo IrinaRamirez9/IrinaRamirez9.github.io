@@ -15,8 +15,24 @@ function map()
   }).addTo(mymap);
 */
 L.tileLayer('http://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',{}).addTo(mymap);
+
+var firstWonder = L.marker([27.174961, 78.042385]).addTo(mymap);
+var secWonder = L.marker([40.334245, 116.477652]).addTo(mymap);
+var thirdWonder = L.marker([30.328611, 35.441944]).addTo(mymap);
+var fourthWonder = L.marker([-22.951389, -43.2108334]).addTo(mymap);
+var fifthWonder = L.marker([-13.163056, -72.545556]).addTo(mymap);
+var sixthWonder = L.marker([20.682778, -88.569167]).addTo(mymap);
+var seventhWonder = L.marker([41.890169, 12.492269]).addTo(mymap);
+
+firstWonder.bindPopup("<b>India's Taj Mahal").openPopup();
+secWonder.bindPopup("<b>Great Wall of China").openPopup();
+thirdWonder.bindPopup("<b>Petra in Jordan").openPopup();
+fourthWonder.bindPopup("<b>Brazil's statue of Christ the Redeemer").openPopup();
+fifthWonder.bindPopup("<b>Peru's Machu Picchu").openPopup();
+sixthWonder.bindPopup("<b>Mexico's Chichen Itza pyramid").openPopup();
+seventhWonder.bindPopup("<b>The Colosseum in Rome").openPopup();
+
 /*
-var marker = L.marker([51.5, -0.09]).addTo(mymap);
 var circle = L.circle([51.508, -0.11], {
   color: 'red',
   fillColor: '#f03',
@@ -37,7 +53,7 @@ var polyline = L.polyline([
 ]).addTo(mymap);
 
 
-marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+
 circle.bindPopup("I am a circle.");
 polygon.bindPopup("I am a polygon.");
 
