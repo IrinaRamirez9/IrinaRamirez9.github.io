@@ -72,6 +72,14 @@
           center:[-118.2095, 34.0866]
           });
 
+var basemapGallery = new BasemapGallery({
+view: view
+});
+
+view.ui.add(basemapGallery, {
+position: "top-right"
+});
+
 view.on("click", eventHandler);
 
 function eventHandler(event) {
