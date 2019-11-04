@@ -141,7 +141,7 @@ var params = newQuery({
 returnGeometry: true,
 outFields: ["*"]
 });
-
+//added the spatial query to dosplay content on the bottom right
 view.when(function() {
   view.ui.add("optionsDiv", "bottom-right");
   on(dom.byId("doBtn"), "click", doQuery);
