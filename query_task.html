@@ -131,13 +131,13 @@ varpopupTemplate = {
   "<br><b>Longitude:</b> {Longitude}"
 };
 
-var resultLayer = newGraphicsLayer();
+var resultLayer = new GraphicsLayer();
 
 var qTask = new QueryTask({
 url: popUrl
 });
 
-var params = newQuery({
+var params = new Query({
 returnGeometry: true,
 outFields: ["*"]
 });
