@@ -5,7 +5,7 @@
   <!-- meta attributes are being used to specify the character. UTF-8 can encode all characters-->
   <meta name = "viewport" content = "initial-scale=1, maximum-scale=1, user-scalable=no">
 <!--title of the webpage -->
-  <title>Simple Mapping</title>
+  <title>Homework</title>
   <!--setting the size of the web map -->
   <style>
     html, body, #viewDiv {
@@ -40,6 +40,32 @@
   </script>
   </head>
   <body>
+
+    <div class="dropdown"> <!--creating the drop down menu for the web page and calling the dropdown links-->
+          <h1>Lab 7</h1>
+            <div class="dropdown-content">
+            <h3 id="hw">Homework Link</h3>
+    </div>
+
+      <div id="body-container">
+
+    <script>
+    //the following are the links for all the pages that were created
+    document.getElementById("hw").innerHTML =
+    "<a href='https://tracs.txstate.edu/access/content/attachment/dafdfb1c-7c37-4eea-90cf-606d1ded2d3b/Assignments/c5aec3cf-a872-4296-8ecc-45af5b28a849/G4422_5408_Lab7_ArcGIS%20Javascript%20API.pdf'>Lab 7 Homework</a><br>"
+
+    </script>
+
     <div id="viewDiv"></div>
+
+
+    <div id="copyright">
+    <script>
+    copyright();
+    </script>
+    </div>
+
   </body>
+
+
   </html>
