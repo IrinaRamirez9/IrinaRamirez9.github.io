@@ -31,13 +31,14 @@
 </head>
 <body>
 
+<div class="dropdown"> <!--creating the drop down menu for the web page and calling the dropdown links-->
+      <h1>Links</h1>
+        <div class="dropdown-content">
+        <h3 id="links">Links</h3>
+</div>
 
   <div id="body-container">
-<div class="dropdown">
-    <h1>Links</h1>
-      <div class="dropdown-content">
-      <h3 id="links">Links</h3>
-</div>
+
 <script>
 //the following are the links for all the pages that were created
 document.getElementById("links").innerHTML =
@@ -54,7 +55,7 @@ document.getElementById("links").innerHTML =
 
 
 
-
+<!--this is where the javascript is being called drom the .js file that was created to display the links and webmap>-->
     <div id="header">
  <script>
  document.write(welcome());
