@@ -5,7 +5,7 @@
   <!-- meta attributes are being used to specify the character. UTF-8 can encode all characters-->
   <meta name = "viewport" content = "initial-scale=1, maximum-scale=1, user-scalable=no">
 <!--title of the webpage -->
-  <title>On Event</title>
+  <title>Query Task</title>
   <!--setting the size of the web map -->
   <style>
     html, body, #viewDiv {
@@ -47,7 +47,7 @@
     "esri/tasks/support/Query",
     "dojo/_base/array",
     "dojo/dom",
-    "dojo.on",
+    "dojo/on",
     "dojo/domReady!"
 
     ],
@@ -55,43 +55,8 @@
     function(Map, MapView, TileLayer, MapImageLayer, BasemapGallery, GraphicsLayer, QueryTask, Query, arrayUtils, dom, on){
       var TransportationLayer = new TileLayer({
         url: "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Transportation/MapServer"
+
         });
-
-        var popUrl: "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/ArcGIS/rest/services/CaliforniaCities/FeatureServer/0";
-        varpopupTemplate = {
-          title: "{City}",
-          fieldInfos: [{
-            fieldName: "Population",
-            label: "Population",
-            format: {
-              places:0,
-              digitSeperator: true
-            }
-          }, {
-            fieldName: "Household",
-            label: "Household",
-            format: {
-              places:0,
-              digitSeperator: true
-            }
-          }],
-          content:
-          "<b>Population:" + "</b> {Population}" +
-          "<br><b>Households:</b> {Household}" +
-          "<br><b>Latitude:</b> {Latitude}" +
-          "<br><b>Longitude:</b> {Longitude}"
-        };
-
-      var resultLayer = newGraphicsLayer();
-
-      var qTask = new QueryTask({
-        url: popUrl
-      });
-
-      var params = newQuery({
-        returnGeometry: true,
-        outFields: ["*"]
-      });
 
         var CitiesRenderer = {
           type: "simple", //autocast as new SimpleRenderer()
@@ -140,12 +105,78 @@ view.ui.add(basemapGallery, {
 position: "top-right"
 });
 
-view.on("click", eventHandler);
+  var popUrl = "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/ArcGIS/rest/services/CaliforniaCities/FeatureServer/0";
 
-function eventHandler(event) {
-console.log("You just triggered a 'click' event!");
-alert("You just triggered a 'click' event!");
+varpopupTemplate = {
+  title: "{City}",
+  fieldInfos: [{
+    fieldName: "Population",
+    label: "Population",
+    format: {
+      places:0,
+      digitSeperator: true
+    }
+  }, {
+    fieldName: "Household",
+    label: "Household",
+    format: {
+      places:0,
+      digitSeperator: true
+    }
+  }],
+  content:
+  "<b>Population:" + "</b> {Population}" +
+  "<br><b>Households:</b> {Household}" +
+  "<br><b>Latitude:</b> {Latitude}" +
+  "<br><b>Longitude:</b> {Longitude}"
+};
+
+var resultLayer = newGraphicsLayer();
+
+var qTask = new QueryTask({
+url: popUrl
+});
+
+var params = newQuery({
+returnGeometry: true,
+outFields: ["*"]
+});
+
+view.when(function() {
+  view.ui.add("optionsDiv", "bottom-right");
+  on(dom.byId("doBtn"), "click", doQuery);
+});
+
+var attributeName = dom.byId("attSelect");
+var expressionSign = dom.byId("signSelect");
+var value = dom.byId("valSelect");
+
+function doQuery() {
+  resultsLayer.removeAll();
+  params.where = attributeName.value + expressionSign.value + value.value;
+  qTask.execute(params)
+  .then(getResults)
+  .catch(promiseRejected);
 }
+function getResults(response) {
+var popResults = arrayUtils.map(response.features, function(
+  feature) {
+feature.popupTemplate = popupTemplate;
+  return feature;
+     });
+resultsLayer.addMany(popResults);
+  view.goTo(popResults).then(function() {
+     view.popup.open({
+     features: popResults,
+     featureMenuOpen: true,
+     updateLocationEnabled: true
+});
+});
+dom.byId("printResults").innerHTML = popResults.length + "results found!";
+ }
+function promiseRejected(error) {
+  console.error("Promise rejected: ", error.message);
+ }
 
     });
   </script>
