@@ -31,9 +31,9 @@ background-color: #f7f7f7;
 max-width: 1000px;
 margin: auto;
 height: 100vh;
- border: 2px solid #f7f7f7;
-  border-radius: 25px;
-  overflow: hidden;
+border: 2px solid #f7f7f7;
+border-radius: 25px;
+overflow: hidden;
 }
 /* The header turned to a light pink;however, I couldnt tell that it did
 anything until after the body container.*/
@@ -107,9 +107,9 @@ left: 50px;
 
 /* The code is for the copyright that is at the bottom of the page */
 #copyright {
-  position:absolute;
+  margin: auto;
   width:1000px;
-  bottom: 20px
+  bottom: 20px;
   text-align: center;
   ;
 }

@@ -17,15 +17,15 @@
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/opencagedata/leaflet-opencage-search@d4cbd36122efc8d17152b4177ed0e12165305441/dist/css/L.Control.OpenCageData.Search.min.css" />
       <script src="https://cdn.jsdelivr.net/gh/opencagedata/leaflet-opencage-search@d4cbd36122efc8d17152b4177ed0e12165305441/dist/js/L.Control.OpenCageSearch.min.js"></script>
 
-  <script src="javascript/secret_keys.js"></script>
-  <script src="javascript/external.js"></script>
-<script src="javascript/map.js"></script>
+  <script src="javascript\secret_keys.js"></script>
+  <script src="javascript\external.js"></script>
+
 
   <title>Irina Ramirez</title>
   <!-- All styling for this HTML document are contained in this external css
   file -->
   <link rel="stylesheet" type="text/css" href="css/main_style.css">
-
+  <link rel="stylesheet" type="text/css" href="css/map_style.css">
 
 
 </head>
@@ -34,27 +34,21 @@
 <div class="dropdown"> <!--creating the drop down menu for the web page and calling the dropdown links-->
       <h1>Links</h1>
         <div class="dropdown-content">
+
         <h3 id="links">Links</h3>
+        <script>
+        //the following are the links for all the pages that were created
+        document.getElementById("links").innerHTML =
+        "<a href='https://irinaramirez9.github.io/dynamic_layers.html' target='_blank'>Dynamic Layers</a><br>"+
+        "<a href='https://irinaramirez9.github.io/basemap_gallery.html' target='_blank'>BaseMap Gallery</a><br>" +
+        "<a href='https://irinaramirez9.github.io/on_event.html' target='_blank'>On Event</a><br>" +
+        "<a href='https://irinaramirez9.github.io/simple_mapping.html' target='_blank'>Simple Mapping</a><br>" +
+        "<a href='https://irinaramirez9.github.io/query_task.html' target='_blank'>Query Map</a><br>" +
+        "<a href='https://irinaramirez9.github.io/tile_layer.html' target='_blank'>Tile Layers</a><br>";
+        </script>
 </div>
 
   <div id="body-container">
-
-<script>
-//the following are the links for all the pages that were created
-document.getElementById("links").innerHTML =
-"<a href='https://irinaramirez9.github.io/dynamic_layers.html' target='_blank'>Dynamic Layers</a><br>"+
-"<a href='https://irinaramirez9.github.io/basemap_gallery.html' target='_blank'>BaseMap Gallery</a><br>" +
-"<a href='https://irinaramirez9.github.io/on_event.html' target='_blank'>On Event</a><br>" +
-"<a href='https://irinaramirez9.github.io/simple_mapping.html' target='_blank'>Simple Mapping</a><br>" +
-"<a href='https://irinaramirez9.github.io/query_task.html' target='_blank'>Query Map</a><br>" +
-"<a href='https://irinaramirez9.github.io/tile_layer.html' target='_blank'>Tile Layers</a><br>";
-</script>
-
-
-
-
-
-
 <!--this is where the javascript is being called drom the .js file that was created to display the links and webmap>-->
     <div id="header">
  <script>
@@ -95,18 +89,20 @@ webmap_table();
 
 <h3>Geocoding Map</h3>
 <div id="mapid" style="width: 600px; height: 400px; margin: auto;">
-</div>
-  <script>
-  map();
-  </script>
+
+<script src="javascript\map.js"></script>
+<script>map();</script>
 </div>
 
-<div id="copyright">
-<script>
-copyright();
-</script>
-</div>
 
 
 </body>
+
+<footer>
+  <div id="copyright">
+  <script>
+  copyright();
+  </script>
+  </div>
+</footer>
 </html>
