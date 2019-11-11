@@ -5,8 +5,8 @@
   <!-- meta attributes are being used to specify the character. UTF-8 can encode all characters-->
   <meta name = "viewport" content = "initial-scale=1, maximum-scale=1, user-scalable=no">
 <!--title of the webpage -->
-  <title>Homework</title>
-  <!--setting the size of the web map -->
+<title>Homework</title>
+<!--setting the size of the web map -->
   <style>
     html, body, #viewDiv {
       padding: 0;
@@ -15,67 +15,66 @@
       width: 100%;
     }
   </style>
-  <!-- link to the base map that was chosen for the lab -->
-  <link rel= "stylesheet" href="https://js.arcgis.com/4.13/esri/css/main.css">
+<!-- link to the base map that was chosen for the lab -->
+<link rel= "stylesheet" href="https://js.arcgis.com/4.13/esri/css/main.css">
   <script src= "https://js.arcgis.com/4.13/"></script>
   <!--this section will load the map and the mapview components.-->
   <script>
-    require([
+  require([
     "esri/Map",
     "esri/views/MapView"
     ],
-    //creating a function that will have the default basemap for the web page
-    function(Map, MapView){
-        var map = new Map({
-        basemap: "streets"
-        });
+//creating a function that will have the default basemap for the web page
+  function(Map, MapView){
+    var map = new Map({
+    basemap: "streets"
+    });
 //This section is to show a 2D viewing and have the center be Los Angeles when you first open the page
     var view = new MapView({
-        container: "viewDiv",
-        map: map,
-        zoom: 10,
-        center:[-118.2095, 34.0866] //this is creating a center point that will display LA, CA
-        });
+      container: "viewDiv",
+      map: map,
+      zoom: 10,
+      center:[-118.2095, 34.0866] //this is creating a center point that will display LA, CA
+      });
     });
-  </script>
+</script>
 
 
-  </head>
-  <body>
+</head>
+<body>
   <link rel="stylesheet" type="text/css" href="css/main_style.css">
     <div class="dropdown"> <!--creating the drop down menu for the web page and calling the dropdown links-->
-          <h1>Lab 7</h1>
-            <div class="dropdown-content">
-            <h3 id="hw">Homework Link</h3>
+      <h1>Lab 7</h1>
+      <div class="dropdown-content">
+      <h3 id="hw">Homework Link</h3>
     </div>
 
-      <div id="body-container">
+    <div id="body-container">
 
-        <script>
-        //the following are the links for all the pages that were created
-        document.getElementById("links").innerHTML =
-        "<a href='https://irinaramirez9.github.io/dynamic_layers.html' target='_blank'>Dynamic Layers</a><br>"+
-        "<a href='https://irinaramirez9.github.io/basemap_gallery.html' target='_blank'>BaseMap Gallery</a><br>" +
-        "<a href='https://irinaramirez9.github.io/on_event.html' target='_blank'>On Event</a><br>" +
-        "<a href='https://irinaramirez9.github.io/simple_mapping.html' target='_blank'>Simple Mapping</a><br>" +
-        "<a href='https://irinaramirez9.github.io/query_task' target='_blank'>Query Maps</a><br>" +
-        "<a href='https://irinaramirez9.github.io/tile_layer.html' target='_blank'>Tile Layers</a><br>" +
-        "<a href='https://tracs.txstate.edu/access/content/attachment/dafdfb1c-7c37-4eea-90cf-606d1ded2d3b/Assignments/c5aec3cf-a872-4296-8ecc-45af5b28a849/G4422_5408_Lab7_ArcGIS%20Javascript%20API.pdf' target='_blank'>Homework</a><br>";
-        </script>
-
-
+<script>
+//the following are the links for all the pages that were created
+  document.getElementById("hw").innerHTML =
+  "<a href='https://irinaramirez9.github.io/dynamic_layers.html' target='_blank'>Dynamic Layers</a><br>"+
+  "<a href='https://irinaramirez9.github.io/basemap_gallery.html' target='_blank'>BaseMap Gallery</a><br>" +
+  "<a href='https://irinaramirez9.github.io/on_event.html' target='_blank'>On Event</a><br>" +
+  "<a href='https://irinaramirez9.github.io/simple_mapping.html' target='_blank'>Simple Mapping</a><br>" +
+  "<a href='https://irinaramirez9.github.io/query_task' target='_blank'>Query Maps</a><br>" +
+  "<a href='https://irinaramirez9.github.io/tile_layer.html' target='_blank'>Tile Layers</a><br>" +
+  "<a href='https://tracs.txstate.edu/access/content/attachment/dafdfb1c-7c37-4eea-90cf-606d1ded2d3b/Assignments/c5aec3cf-a872-4296-8ecc-45af5b28a849/G4422_5408_Lab7_ArcGIS%20Javascript%20API.pdf' target='_blank'>Homework</a><br>";
+</script>
 
 
-    <div id="viewDiv"></div>
+
+  <div id="viewDiv"></div>
 
 
-    <div id="copyright">
-    <script>
-    copyright();
-    </script>
-    </div>
+  <div id="copyright">
+<script>
+  copyright();
+  </script>
+  </div>
 
-  </body>
+</body>
 
 
-  </html>
+</html>
